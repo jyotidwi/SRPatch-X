@@ -25,4 +25,104 @@
     <string name="delete_confirm_btn">Delete</string>
     <string name="delete_confirm_title">Permanently delete?</string>
     <string name="delete_confirm_message">You are attempting to delete **%s**. Please be careful as this action is **permanent** and cannot be **undone**.</string>
+
+    <!-- Patch sheet section headers -->
+    <string name="section_pms_proxy_method">PMS Proxy Method</string>
+    <string name="section_signature_strength">Signature Strength</string>
+
+    <!-- Path redirection -->
+    <string name="badge_optional">Optional</string>
+    <string name="title_path_redirection">Path Redirection</string>
+    <string name="desc_path_redirection">Use original apk to bypass</string>
+
+    <!-- PMS Proxy Method options (title + description) -->
+    <string name="pms_binder_proxy_title">IBINDER_PROXY</string>
+    <string name="pms_binder_proxy_desc">Proxy through Binder interface</string>
+    <string name="pms_creator_proxy_title">CREATOR_PROXY</string>
+    <string name="pms_creator_proxy_desc">Proxy through Parcelable Creator</string>
+
+    <!-- Signature Strength options (title + description) -->
+    <string name="sig_pms_hook_title">PMS Hook</string>
+    <string name="sig_pms_hook_desc">Basic Package Manager protection</string>
+    <string name="sig_io_pms_hook_title">IO Hook + PMS Hook</string>
+    <string name="sig_io_pms_hook_desc">File system and package manager</string>
+    <string name="sig_more_hook_title">More Hook</string>
+    <string name="sig_more_hook_desc">Additional hooking techniques</string>
+    <string name="sig_svc_hook_title">SVC Hook</string>
+    <string name="sig_svc_hook_desc">System call level protection</string>
+    <string name="level_prefix">Lv.%1$d</string>
+
+    <!-- Relative date strings -->
+    <string name="time_just_now">Just now</string>
+    <string name="time_yesterday">Yesterday</string>
+    <plurals name="time_minutes_ago">
+        <item quantity="one">%1$d minute ago</item>
+        <item quantity="other">%1$d minutes ago</item>
+    </plurals>
+    <plurals name="time_hours_ago">
+        <item quantity="one">%1$d hour ago</item>
+        <item quantity="other">%1$d hours ago</item>
+    </plurals>
+
+    <!-- File size units -->
+    <string name="size_zero">0 B</string>
+    <string name="size_format">%1$.2f %2$s</string>
+    <string name="unit_byte">B</string>
+    <string name="unit_kb">KB</string>
+    <string name="unit_mb">MB</string>
+    <string name="unit_gb">GB</string>
+    <string name="unit_tb">TB</string>
+    <string name="unit_pb">PB</string>
+    <string name="unit_eb">EB</string>
+
+    <!-- About dialog content (markdown) -->
+    <string name="about_readme"><![CDATA[# SRPatch X 🔪
+
+[SRPatch X](https://github.com/KhunHtetzNaing/SRPatch-X) is a modern Android APK signature verification bypass tool featuring multiple hooking techniques:
+
+-   **Package Manager Hooking (PMS Hook)** - Intercepts signature checks at the system service level
+-   **File System Hooking (IO Hook)** - Blocks signature verification through direct file access
+-   **Supervisor Call Hooking (SVC Hook)** - Bypasses checks at the kernel system call level
+
+## Features
+
+- [x]  Multiple signature bypass methods with configurable strength levels
+- [x] Modern Material Design 3 UI
+- [x] Path redirection for advanced protection
+- [ ] APK signing capabilities with custom keystore support
+
+## Note
+
+**SRPatch X** is an extended version of **SRPatch** (`com.lingxing.srpatch`), originally developed by **LingXing**. Since the original SRPatch is no longer maintained and its website ([srpatch.cc](https://srpatch.cc/)) is offline, I've preserved the core functionality by extracting `libSRPatch.so` and building this application around it.
+
+**Enhancements over original SRPatch:**
+
+-   Added APK signing features
+-   Improved stability and compatibility
+
+**Copyright Notice:**  
+I do not own the "SRPatch" name or the `libSRPatch` core library. All rights remain with the original developer, LingXing.
+
+**Purpose:**  
+Initially created for personal use, I'm sharing SRPatch X publicly for Android security researchers and developers who may benefit from these tools.
+
+## Disclaimer
+
+This tool is intended for educational purposes and legitimate security research only. Users are responsible for ensuring their use complies with applicable laws and terms of service. The author assumes no liability for misuse.
+
+## Requirements
+
+-   **Device:** Android 8.0+ (API 26+)
+-   **Architecture:** arm64-v8a only
+]]></string>
+
+    <!-- Patching error messages (keep in sync with core module IOException strings) -->
+    <string name="error_apk_not_signed">Source APK is not signed</string>
+    <string name="error_apk_invalid">Invalid APK: missing AndroidManifest.xml</string>
+    <string name="error_so_patch_load_failed">Failed to load .so patch</string>
+    <string name="error_dex_patch_load_failed">Failed to load dex patch</string>
+    <string name="error_apk_signer_failed">Failed to register APK signer</string>
+    <string name="error_manifest_package_missing">Package attribute not found in manifest</string>
+    <string name="error_manifest_tag_missing">Manifest tag not found in AndroidManifest.xml</string>
+    <string name="error_application_tag_missing">Application tag not found in manifest</string>
 </resources>

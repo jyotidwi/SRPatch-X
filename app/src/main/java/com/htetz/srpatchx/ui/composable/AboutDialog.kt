@@ -8,12 +8,11 @@ import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.produceState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalResources
+import androidx.compose.ui.res.stringResource
 import com.htetz.srpatchx.R
 import dev.jeziellago.compose.markdowntext.MarkdownText
 
@@ -22,10 +21,7 @@ import dev.jeziellago.compose.markdowntext.MarkdownText
 fun AboutDialog(
     onDismiss: () -> Unit,
 ) {
-    val resource = LocalResources.current
-    val readme by produceState(initialValue = "") {
-        value = resource.openRawResource(R.raw.readme).bufferedReader().use { it.readText() }
-    }
+    val readme = stringResource(R.string.about_readme)
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,
@@ -40,7 +36,7 @@ fun AboutDialog(
             headlineContent = {
                 MarkdownText(
                     markdown = readme,
-                    linkColor = MaterialTheme.colorScheme.primary
+                    linkColor = MaterialTheme.colorScheme.primary,
                 )
             }
         )
